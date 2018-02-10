@@ -2,6 +2,8 @@
 
 React sample using the open dogs api https://dog.ceo/dog-api/
 
+created using create-react-app
+
 ## Getting Started
 
 git clone
