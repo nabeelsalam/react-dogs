@@ -5,8 +5,8 @@ class Gallery extends Component {
     let images = [];
     this.props.images.forEach((image, index) => {
       images.push(
-        <div className="card">
-            <img key={index} className="card-img-top" src={image} alt="Loading image"></img>
+        <div key={index} className="card">
+            <img  className="card-img-top" src={image} alt="Loading image"></img>
         </div>
       )
     })
@@ -14,6 +14,7 @@ class Gallery extends Component {
       <div>
             {images}
       </div>
+
     )
   }
 }

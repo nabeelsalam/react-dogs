@@ -42,6 +42,7 @@ class App extends Component {
   dogClicked(e) {
     let breed = e.target.id;
     this.setState({
+      images: [],
       selectedDog: breed
     });
     fetch(`https://dog.ceo/api/breed/${breed}/images`)
@@ -57,7 +58,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="content-container">
         <Navbar></Navbar>
         <div className="row">
         <div className="col-3">
