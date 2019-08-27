@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import './dogsList.css';
+
+function DogsListItem(props) {
+  return (
+    <li className={props.className} id = {props.dog} onClick={() => props.handleClick(props.dog)}>{props.dog}</li>
+  )
+}
 class DogsList extends Component {
   render() {
     let dogsListContent = [];
@@ -9,7 +15,7 @@ class DogsList extends Component {
         className += ' active'
       }
       dogsListContent.push(
-        <li className={className} id = {dog} key={dog} onClick={this.props.handleClick}>{dog}</li>
+        <DogsListItem className={className} key = {dog} dog={dog} handleClick={this.props.handleClick}/>
       )
     })
     return (

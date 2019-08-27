@@ -15,7 +15,7 @@ class App extends Component {
       dogs: [],
       images: []
     };
-    this.dogClicked = this.dogClicked.bind(this);
+
   }
   componentDidMount() {
     fetch('https://dog.ceo/api/breeds/list')
@@ -39,8 +39,7 @@ class App extends Component {
       })
   }
 
-  dogClicked(e) {
-    let breed = e.target.id;
+  dogClicked(breed) {
     this.setState({
       images: [],
       selectedDog: breed
@@ -59,10 +58,10 @@ class App extends Component {
   render() {
     return (
       <div className="content-container">
-        <Navbar></Navbar>
+        <Navbar heading ="Dogs Database"></Navbar>
         <div className="row">
         <div className="col-3">
-          <DogsList dogs={this.state.dogs} selectedDog={this.state.selectedDog} handleClick={this.dogClicked}/>
+          <DogsList dogs={this.state.dogs} selectedDog={this.state.selectedDog} handleClick={this.dogClicked.bind(this)}/>
         </div>
         <div className="col-9">
           <Gallery images={this.state.images} />
